@@ -1,0 +1,91 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to right, #667eea, #764ba2);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Main Container */
+.container {
+    background: #fff;
+    padding: 25px;
+    border-radius: 15px;
+    width: 350px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* Title */
+h2 {
+    text-align: center;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+/* Progress Text */
+#progress {
+    text-align: center;
+    margin-bottom: 15px;
+    font-weight: bold;
+    color: #555;
+}
+
+/* Activity List */
+ul {
+    list-style: none;
+}
+
+/* Each Activity Item */
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f4f4f4;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    transition: 0.3s;
+}
+
+/* Hover Effect */
+li:hover {
+    background: #e0e0e0;
+}
+
+/* Completed Activity */
+.completed {
+    text-decoration: line-through;
+    color: green;
+    font-weight: 500;
+}
+
+/* Button */
+button {
+    border: none;
+    padding: 6px 10px;
+    border-radius: 6px;
+    background: #667eea;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* Button Hover */
+button:hover {
+    background: #5a67d8;
+}
+
+/* Completed Button Style */
+button:disabled {
+    background: #28a745;
+    cursor: not-allowed;
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Activity Tracker</title>
+    <style>
+        body { font-family: Arial; }
+        .completed { text-decoration: line-through; color: green; }
+    </style>
+</head>
+<body>
+
+<h2>My Activities</h2>
+<p id="progress"></p>
+
+<ul id="activityList"></ul>
+
+<script>
+    // Step 1: Activity Data
+    let activities = [
+        { id: 1, name: "Wake up early", completed: false },
+        { id: 2, name: "Exercise", completed: false },
+        { id: 3, name: "Study", completed: false },
+        { id: 4, name: "Project work", completed: false }
+    ];
+
+    // Step 2: Render UI
+    function renderActivities() {
+        let list = document.getElementById("activityList");
+        list.innerHTML = "";
+
+        activities.forEach((activity, index) => {
+            let li = document.createElement("li");
+
+            li.innerHTML = `
+                <span class="${activity.completed ? 'completed' : ''}">
+                    ${activity.name}
+                </span>
+                <button onclick="markCompleted(${index})">
+                    ${activity.completed ? 'Done' : 'Mark Complete'}
+                </button>
+            `;
+
+            list.appendChild(li);
+        });
+
+        updateProgress();
+    }
+
+    // Step 3: Mark Completed
+    function markCompleted(index) {
+        activities[index].completed = true;
+        renderActivities();
+    }
+
+    // Step 4: Update Progress
+    function updateProgress() {
+        let completedCount = activities.filter(a => a.completed).length;
+        document.getElementById("progress").innerText =
+            `${completedCount} out of ${activities.length} activities completed`;
+    }
+
+    // Initial Render
+    renderActivities();
+</script>
+
+</body>
+</html>
